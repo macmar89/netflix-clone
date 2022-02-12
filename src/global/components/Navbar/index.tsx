@@ -1,9 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { ChangeEvent, useRef, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { FaBell } from "react-icons/fa";
 import { StyledNavbar } from "./StyledNavbar";
-import {Input} from "../Input";
+import { SEARCH_API_URL } from "../../constants/apiConstants";
+import axios from "axios";
+import { useSetRecoilState } from "recoil";
+import { SearchMovieAtom } from "../../recoil/SearchMovieAtom";
 
 const menuLinks = [
   {
@@ -27,11 +30,26 @@ const menuLinks = [
 export const Navbar = () => {
   const [showSearchBox, setShowSearchBox] = useState(false);
 
+  const [text, setText] = useState("");
+
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const setMovies = useSetRecoilState(SearchMovieAtom);
+
+  const history = useHistory();
 
   window.onscroll = () => {
     setIsScrolled(window.scrollY! === 0);
     return () => (window.onscroll = null);
+  };
+
+  const handleSearch = async (e: ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await axios
+      .get(SEARCH_API_URL + `&query=${text.replaceAll(" ", "+")}`)
+      .then((res) => setMovies(res.data))
+      .then(() => history.push(`/search`));
+    setText("");
   };
 
   return (
@@ -50,12 +68,20 @@ export const Navbar = () => {
           </StyledNavbar.NavLinks>
         </StyledNavbar.Left>
         <StyledNavbar.Right>
-          <StyledNavbar.Search show={showSearchBox}>
+          <StyledNavbar.Search onSubmit={handleSearch} show={showSearchBox}>
             <BiSearch
               className="icon"
               onClick={() => setShowSearchBox(!showSearchBox)}
             />
-            <input type="text" placeholder={'Search movie'} autoFocus />
+            <input
+              type="text"
+              placeholder={"Search movie"}
+              autoFocus
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setText(e.target.value)
+              }
+              value={text}
+            />
           </StyledNavbar.Search>
           <FaBell className="icon" />
         </StyledNavbar.Right>

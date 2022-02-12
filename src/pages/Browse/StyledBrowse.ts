@@ -11,6 +11,7 @@ const Form = styled.form`
 
 const MovieList = styled.div`
   display: flex;
+  position: relative;
   flex-flow: row;
   flex-wrap: wrap;
   gap: 0.5rem;

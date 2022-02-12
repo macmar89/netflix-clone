@@ -63,7 +63,7 @@ const Right = styled.div`
   }
 `;
 
-const Search = styled.div<SearchProps>`
+const Search = styled.form<SearchProps>`
   display: flex;
   align-items: center;
   position: relative;
