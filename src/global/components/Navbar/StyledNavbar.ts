@@ -43,7 +43,6 @@ const NavLinks = styled.ul`
   display: flex;
   column-gap: 1rem;
   list-style: none;
-
 `;
 
 const NavLink = styled.li`
@@ -65,7 +64,31 @@ const Right = styled.div`
 `;
 
 const Search = styled.div<SearchProps>`
+  display: flex;
+  align-items: center;
+  position: relative;
 
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+  }
+
+  input {
+    background-color: black;
+    outline: none;
+    color: white;
+    padding: 8px 8px 8px 32px;
+
+    &::placeholder {
+      font-size: 1.05rem;
+    }
+
+    &:focus-within {
+      border: 1px solid white;
+    }
+  }
 `;
 
 export const StyledNavbar = {

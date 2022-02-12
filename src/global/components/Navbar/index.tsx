@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { FaBell } from "react-icons/fa";
 import { StyledNavbar } from "./StyledNavbar";
+import {Input} from "../Input";
 
 const menuLinks = [
   {
@@ -24,7 +25,7 @@ const menuLinks = [
 ];
 
 export const Navbar = () => {
-  const [openSearchBox, setOpenSearchBox] = useState(false);
+  const [showSearchBox, setShowSearchBox] = useState(false);
 
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -49,11 +50,12 @@ export const Navbar = () => {
           </StyledNavbar.NavLinks>
         </StyledNavbar.Left>
         <StyledNavbar.Right>
-          <StyledNavbar.Search show={openSearchBox}>
+          <StyledNavbar.Search show={showSearchBox}>
             <BiSearch
               className="icon"
-              onClick={() => setOpenSearchBox(!openSearchBox)}
+              onClick={() => setShowSearchBox(!showSearchBox)}
             />
+            <input type="text" placeholder={'Search movie'} autoFocus />
           </StyledNavbar.Search>
           <FaBell className="icon" />
         </StyledNavbar.Right>
