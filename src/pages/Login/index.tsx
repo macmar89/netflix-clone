@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
+import { Link } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { StyledLogin } from "./StyledLogin";
 import { Button } from "../../global/components/Button";
 import { Input } from "../../global/components/Input";
 import { useForm } from "react-hook-form";
+import { AiFillFacebook } from "react-icons/ai";
 
 const Login = () => {
+  const [showMore, setShowMore] = useState(false);
+
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .required("Please enter a valid email or phone number")
@@ -53,8 +57,46 @@ const Login = () => {
             {...register("password")}
           />
 
-          <Button label={"Sign In"} />
+          <div style={{ padding: "1.5rem 0 0.75rem 0" }}>
+            <Button label={"Sign In"} />
+          </div>
+          <StyledLogin.LoginFormHelp>
+            <div className="remember-login">
+              <input type="checkbox" name="remember-login" />
+              <label>Remember me</label>
+            </div>
+            <div className="help">
+              <Link to="https://www.netflix.com/sk/LoginHelp">Need help?</Link>
+            </div>
+          </StyledLogin.LoginFormHelp>
         </StyledLogin.Form>
+        <StyledLogin.Other>
+          <div className="fa">
+            <AiFillFacebook />
+            <span>Login with Facebook</span>
+          </div>
+          <div>
+            New to Netflix?{" "}
+            <Link to="/" className="link">
+              Sign up now
+            </Link>
+          </div>
+          <p>
+            This page is protected by Google reCAPTCHA to ensure you're not a
+            bot.{" "}
+            <span className="blue-link" onClick={() => setShowMore(true)}>
+              Learn more.
+            </span>
+          </p>
+          <p style={{ visibility: `${showMore ? "visible" : "hidden"}`, transition: 'all 0.5s easy ' }}>
+            The information collected by Google reCAPTCHA is subject to the
+            Google <span className="blue-link">Privacy Policy</span> and{" "}
+            <span className="blue-link">Terms of Service</span> , and is used
+            for providing, maintaining, and improving the reCAPTCHA service and
+            for general security purposes (it is not used for personalized
+            advertising by Google).
+          </p>
+        </StyledLogin.Other>
       </StyledLogin.LoginBox>
     </StyledLogin.Wrapper>
   );

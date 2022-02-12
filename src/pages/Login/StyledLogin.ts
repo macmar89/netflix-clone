@@ -26,7 +26,7 @@ const Logo = styled.div`
 `;
 
 const LoginBox = styled.div`
-  width: 450px;
+  max-width: 350px;
   padding: 60px 68px 48px;
   margin: 0 auto 90px;
   height: auto;
@@ -40,6 +40,59 @@ const LoginBox = styled.div`
 const Form = styled.form`
   display: flex;
   flex-flow: column;
+
+  margin-bottom: 2.5rem;
+`;
+
+const LoginFormHelp = styled.div`
+  display: flex;
+  justify-content: space-between;
+  color: #b3b3b3;
+
+  .help a {
+    color: #b3b3b3;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+const Other = styled.div`
+  color: #b3b3b3;
+
+  > * {
+    margin-bottom: 13px;
+  }
+
+  .fa {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    font-size: 13px;
+
+    svg {
+      color: #3B579D;
+      font-size: 24px;
+    }
+  }
+
+  .link {
+    color: white;
+  }
+
+  .blue-link {
+    color: #0071eb;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    font-size: 13px;
+  }
 `;
 
 export const StyledLogin = {
@@ -47,4 +100,6 @@ export const StyledLogin = {
   Logo,
   LoginBox,
   Form,
+  LoginFormHelp,
+  Other,
 };

@@ -7,17 +7,10 @@ interface InputProps {
 const Wrapper = styled.div`
   display: flex;
   flex-flow: column;
+  padding-bottom: 1rem;
 `;
 
 const Input = styled.input<InputProps>`
-  //background-color: #333333;
-  //padding: 1rem 1.25rem 0;
-  //line-height: 50px;
-  //
-  //&::placeholder {
-  //  font-size: 1rem;
-  //}
-
   height: 40px;
   border-radius: 5px;
   background-color: #333;
