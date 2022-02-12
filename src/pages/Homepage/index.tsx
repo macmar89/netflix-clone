@@ -1,11 +1,13 @@
 import React from "react";
 import { StyledHomepage } from "./StyledHomepage";
 import Footer from "../../layout/Footer";
+import {LinkButton} from "../../global/components/Button";
 
 const Homepage = () => {
   return (
     <StyledHomepage.Wrapper>
         <StyledHomepage.StoryCard>
+          <LinkButton href={'/browse'} label={'browse'} />
           <h1>Neomezená podívaná na filmy, TV pořady a další.</h1>
           <h2>Dívejte se kdekoli. Zrušte kdykoli.</h2>
           <form>
