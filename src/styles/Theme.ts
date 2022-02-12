@@ -4,6 +4,7 @@ declare module "styled-components" {
 
   export interface DefaultTheme {
     colors: {
+      background: string
       white: string
       black: string
       red:string
@@ -14,6 +15,7 @@ declare module "styled-components" {
 
 export const theme : DefaultTheme = {
   colors: {
+    background: '#141414',
     white: '#fff',
     black: '#000',
     red: "#e50914",
