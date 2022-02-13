@@ -12,6 +12,7 @@ const Container = styled.div`
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   margin: 0 5px;
+  z-index: 100;
 
 
   img {
@@ -21,11 +22,11 @@ const Container = styled.div`
     position: absolute;
   }
   &:hover {
-    transform: scale(150%);
+    transform: scale(125%);
 
     -webkit-box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.07);
     box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.07);
-    z-index: 5;
+    z-index: 200;
 
 
 `;
@@ -33,11 +34,11 @@ const Container = styled.div`
 const Content = styled.div``;
 
 const Text = styled.div<{isHovered: boolean}>`
-  position: absolute;
   font-size: 13px;
-  z-index: 10;
   width: 100%;
   height: 100%;
+  z-index: 300;
+  transform: translateY(-50%);
 
   transition: top 0.5s ease-in-out ;
 

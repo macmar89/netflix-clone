@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyledMovieCard } from "./StyledMovieCard";
+import {IMAGE_URL} from "../../global/constants/apiConstants";
 
 interface IMovieCard {
   movie: any;
@@ -7,7 +8,7 @@ interface IMovieCard {
 
 export const MovieCard = ({ movie }: IMovieCard) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const poster = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
+  const poster = `${IMAGE_URL}${movie?.backdrop_path}`
 
   return (
     <StyledMovieCard.Container

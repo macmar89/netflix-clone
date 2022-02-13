@@ -1,5 +1,5 @@
 import React from "react";
-import { Pagination, Navigation } from "swiper";
+import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { MovieCard } from "../../../layout/NewMovieCard";
@@ -7,12 +7,10 @@ import { MovieCard } from "../../../layout/NewMovieCard";
 import "swiper/css/pagination";
 import { StyledMovieCarousel } from "./StyledMovieCarousel";
 
-
 export const MovieCarousel = ({ movies }: { movies: any }) => {
   const options = {
     slidesPerView: 5,
-    pagination: { clickable: true },
-    modules: [Pagination, Navigation],
+    modules: [Navigation],
     loop: true,
     loopFillGroupWithBlank: true,
     navigation: true,
@@ -30,4 +28,3 @@ export const MovieCarousel = ({ movies }: { movies: any }) => {
     </StyledMovieCarousel.Container>
   );
 };
-

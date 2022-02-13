@@ -7,6 +7,7 @@ import { MovieCarousel } from "../../global/components/MovieCarousel";
 import { Navbar } from "../../global/components/Navbar";
 
 import { RANDOM_MOVIES_API_URL } from "../../global/constants/apiConstants";
+import Preview from "../../layout/Preview";
 
 const Browse = () => {
   const [movies, setMovies] = useState<null | any>(null);
@@ -31,11 +32,13 @@ const Browse = () => {
     <StyledBrowse.Container>
       <Navbar />
 
-      <div style={{ paddingTop: "100px", width: "100vw" }}>
-        {movies?.map((movie: any) => (
-          <div key={movie.id}>{movie.title}</div>
-        ))}
-      </div>
+      {/*<div style={{ paddingTop: "100px", width: "100vw" }}>*/}
+      {/*  {movies?.map((movie: any) => (*/}
+      {/*    <div key={movie.id}>{movie.title}</div>*/}
+      {/*  ))}*/}
+      {/*</div>*/}
+
+      <Preview movie={movies && movies[0]} />
 
       <MovieCarousel movies={movies} />
     </StyledBrowse.Container>

@@ -15,6 +15,7 @@ const Container = styled.div<StyledNavbarProps>`
     isScrolled ? "transparent" : "#141414"};
   height: 68px;
   width: 100%;
+  z-index: 9999;
 
   transition: background-color 0.5s ease-in-out;
 
