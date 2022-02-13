@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+
 import { StyledBrowse } from "./StyledBrowse";
+
+import { MovieCarousel } from "../../global/components/MovieCarousel";
 import { Navbar } from "../../global/components/Navbar";
+
 import { RANDOM_MOVIES_API_URL } from "../../global/constants/apiConstants";
-import { MovieCard } from "../../layout/NewMovieCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/pagination";
-import { Pagination, Navigation } from "swiper";
 
 const Browse = () => {
   const [movies, setMovies] = useState<null | any>(null);
@@ -27,15 +27,6 @@ const Browse = () => {
     fetchMovies();
   }, []);
 
-  const options = {
-    slidesPerView: 5,
-    pagination: { clickable: true },
-    modules: [Pagination, Navigation],
-    loop: true,
-    loopFillGroupWithBlank: true,
-    navigation: true,
-  };
-
   return (
     <StyledBrowse.Container>
       <Navbar />
@@ -46,13 +37,7 @@ const Browse = () => {
         ))}
       </div>
 
-      <Swiper {...options}>
-        {movies?.map((movie: any) => (
-          <SwiperSlide key={movie.id}>
-            <MovieCard movie={movie} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <MovieCarousel movies={movies} />
     </StyledBrowse.Container>
   );
 };
