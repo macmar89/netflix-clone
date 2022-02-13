@@ -42,16 +42,26 @@ const Content = styled.div`
 `;
 
 const Info = styled.div`
+  display: flex;
+  column-gap: 4rem;
   padding: 2rem 3rem;
   font-size: 1.05rem;
+
+  .left {
+    flex: 3;
+  }
+
+  .right {
+    flex: 2;
+  }
 
   .basic {
     display: flex;
     align-items: center;
     column-gap: 0.8rem;
-    padding: 1rem 0;
     letter-spacing: 1px;
     font-size: 1.5rem;
+    padding: 1rem 0;
 
     .rating {
       display: flex;
@@ -83,14 +93,16 @@ const Info = styled.div`
   .desc {
     letter-spacing: 1px;
     line-height: 1.3;
+    padding: 1rem 0;
   }
 
   .genres {
     display: flex;
+    letter-spacing: 1px;
+    padding: 1rem 0;
 
     .label {
       margin-right: 0.5rem;
-
     }
 
     .genre {

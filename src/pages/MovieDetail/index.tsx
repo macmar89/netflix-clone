@@ -67,29 +67,36 @@ const MovieDetail = () => {
             </div>
           </div>
         </header>
+
         <StyledMovieDetail.Info>
-          <div className="basic">
-            <div className="rating">
-              {movie?.vote_average} <span className="max"> /10</span>
-              <div className="vote-count">({movie?.vote_count} hlasov)</div>
+          <div className="left">
+            <div className="basic">
+              <div className="rating">
+                {movie?.vote_average} <span className="max"> /10</span>
+                <div className="vote-count">({movie?.vote_count} hlasov)</div>
+              </div>
+              <div>{getYear(movie?.release_date)}</div>
+              <div className="runtime">
+                {convertMinutesToTime(movie?.runtime)}
+              </div>
+              {movie?.adult === true && <div className="adult">18+</div>}
             </div>
-            <div>{getYear(movie?.release_date)}</div>
-            <div className="runtime">
-              {convertMinutesToTime(movie?.runtime)}
-            </div>
-            {movie?.adult === true && <div className="adult">18+</div>}
+
+            <div className="desc">{movie?.overview}</div>
           </div>
-          <div className="desc">{movie?.overview}</div>
-          <div className="genres">
-            <div className="label">Žáner: </div>
-            {movie?.genres?.map(
-              (genre: { id: number; name: string }, index: number) => (
-                <div className="genre" key={genre.id}>
-                  {genre.name}
-                  {movie?.genres?.length !== index + 1 && ","}
-                </div>
-              )
-            )}
+
+          <div className="right">
+            <div className="genres">
+              <div className="label">Žáner: </div>
+              {movie?.genres?.map(
+                (genre: { id: number; name: string }, index: number) => (
+                  <div className="genre" key={genre.id}>
+                    {genre.name}
+                    {movie?.genres?.length !== index + 1 && ","}
+                  </div>
+                )
+              )}
+            </div>
           </div>
         </StyledMovieDetail.Info>
       </StyledMovieDetail.Content>
