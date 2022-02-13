@@ -10,6 +10,7 @@ import { FaPlay } from "react-icons/fa";
 import { BsHandThumbsDown, BsHandThumbsUp } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { TitleOriginal } from "../../layout/TitleOriginal";
+import { convertMinutesToTime, getYear } from "../../global/helpers/moment";
 
 const key = process.env.REACT_APP_API_KEY;
 
@@ -66,7 +67,31 @@ const MovieDetail = () => {
             </div>
           </div>
         </header>
-        <StyledMovieDetail.Info>.</StyledMovieDetail.Info>
+        <StyledMovieDetail.Info>
+          <div className="basic">
+            <div className="rating">
+              {movie?.vote_average} <span className="max"> /10</span>
+              <div className="vote-count">({movie?.vote_count} hlasov)</div>
+            </div>
+            <div>{getYear(movie?.release_date)}</div>
+            <div className="runtime">
+              {convertMinutesToTime(movie?.runtime)}
+            </div>
+            {movie?.adult === true && <div className="adult">18+</div>}
+          </div>
+          <div className="desc">{movie?.overview}</div>
+          <div className="genres">
+            <div className="label">Žáner: </div>
+            {movie?.genres?.map(
+              (genre: { id: number; name: string }, index: number) => (
+                <div className="genre" key={genre.id}>
+                  {genre.name}
+                  {movie?.genres?.length !== index + 1 && ","}
+                </div>
+              )
+            )}
+          </div>
+        </StyledMovieDetail.Info>
       </StyledMovieDetail.Content>
     </StyledMovieDetail.Container>
   );
