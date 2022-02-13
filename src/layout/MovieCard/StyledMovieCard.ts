@@ -84,12 +84,7 @@ const Container = styled.div<{left:  any}>`
   }
 `;
 
-const Content = styled.div`
-  ${Container} &:hover {
-  }
-`;
 
 export const StyledMovieCard = {
   Container,
-  Content,
 };
