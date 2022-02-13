@@ -1,6 +1,17 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+  box-sizing: border-box;
+  .slider {
+    background: purple;
+
+    width: 100%;
+    padding: 50px 50px;
+  }
+
+  .slick-list {
+    padding: 80px 0;
+  }
 `;
 
 const Form = styled.form`

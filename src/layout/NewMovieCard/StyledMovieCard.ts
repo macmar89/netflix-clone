@@ -4,13 +4,14 @@ const Container = styled.div`
 
   position: relative;
   width: auto;
-  height: 120px;
+  height: 220px;
   background-color: #141414;
   overflow: hidden;
   color: white;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  margin: 0 5px;
 
 
   img {
@@ -20,7 +21,7 @@ const Container = styled.div`
     position: absolute;
   }
   &:hover {
-    transform: scale(250%);
+    transform: scale(150%);
 
     -webkit-box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.07);
     box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.07);

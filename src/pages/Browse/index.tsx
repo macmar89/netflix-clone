@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import { StyledBrowse } from "./StyledBrowse";
 import { Navbar } from "../../global/components/Navbar";
 import { RANDOM_MOVIES_API_URL } from "../../global/constants/apiConstants";
-
-const key = process.env.REACT_APP_API_KEY;
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import {MovieCard} from "../../layout/NewMovieCard";
 
 const Browse = () => {
   const [movies, setMovies] = useState<null | any>(null);
@@ -25,6 +27,12 @@ const Browse = () => {
     fetchMovies();
   }, []);
 
+  const options = {
+    slidesToShow: 5,
+    infinite: true,
+    arrows: false
+  }
+
   return (
     <StyledBrowse.Container>
       <Navbar />
@@ -33,6 +41,14 @@ const Browse = () => {
         {movies?.map((movie: any) => (
           <div key={movie.id}>{movie.title}</div>
         ))}
+      </div>
+
+      <div className='slider'>
+        <Slider {...options}>
+          {movies?.map((movie: any) => (
+            <MovieCard movie={movie} key={movie.id} />
+          ))}
+        </Slider>
       </div>
     </StyledBrowse.Container>
   );
