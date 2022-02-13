@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
     <StyledLogin.Container>
-      <img src="/login.jpg" alt="background" />
+      <img src='/images/login.jpg' alt="background" />
       <div className="overlay" />
       <StyledLogin.Content>
         <StyledLogin.Logo to="/">
