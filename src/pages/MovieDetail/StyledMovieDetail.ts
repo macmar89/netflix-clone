@@ -44,7 +44,7 @@ const Content = styled.div`
 const Info = styled.div`
   display: flex;
   column-gap: 4rem;
-  padding: 2rem 3rem;
+  padding: 1rem 10rem 3rem 10rem;
   font-size: 1.05rem;
 
   .left {
@@ -57,7 +57,7 @@ const Info = styled.div`
 
   .basic {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     column-gap: 0.8rem;
     letter-spacing: 1px;
     font-size: 1.5rem;
@@ -67,6 +67,7 @@ const Info = styled.div`
       display: flex;
       align-items: baseline;
       color: gold;
+      font-weight: bold;
 
       .max {
         color: white;
@@ -78,6 +79,10 @@ const Info = styled.div`
         color: white;
         font-size: 0.9rem;
       }
+    }
+
+    .runtime {
+      font-size: 1.2rem;
     }
 
     .adult {
@@ -98,11 +103,14 @@ const Info = styled.div`
 
   .genres {
     display: flex;
+    align-items: baseline;
     letter-spacing: 1px;
     padding: 1rem 0;
 
     .label {
       margin-right: 0.5rem;
+      font-size: 1.5rem;
+
     }
 
     .genre {

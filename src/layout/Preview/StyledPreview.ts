@@ -40,7 +40,7 @@ const Info = styled.div`
 
   .other {
     display: flex;
-    column-gap: 1rem;
+    column-gap: 0.5rem;
     font-weight: bolder;
     font-size: 1.2rem;
 
@@ -68,7 +68,7 @@ const Info = styled.div`
 
     &:before {
       content: "-";
-      margin-right: 1rem;
+      margin-right: 0.5rem;
       color: white;
     }
   }

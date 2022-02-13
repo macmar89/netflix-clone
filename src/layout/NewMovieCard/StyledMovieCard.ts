@@ -33,14 +33,23 @@ const Container = styled.div`
 
 const Content = styled.div``;
 
-const Text = styled.div<{isHovered: boolean}>`
-  font-size: 13px;
+const Text = styled.div<{ isHovered: boolean }>`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem 0;
+  text-align: center;
+  background-color: rgba(20, 20, 20, 0.8);
   width: 100%;
-  height: 100%;
   z-index: 300;
-  transform: translateY(-50%);
+  transform: ${({ isHovered }) =>
+    isHovered ? "translateY(0)" : "translateY(100%)"};
 
-  transition: top 0.5s ease-in-out ;
+  transition: transform 0.2s ease-in-out;
 
 `;
 
