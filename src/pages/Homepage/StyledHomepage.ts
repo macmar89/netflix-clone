@@ -78,6 +78,7 @@ const OurStory = styled.div`
     justify-content: center;
     z-index: 500;
     text-align: center;
+    max-width: 900px;
 
     h1 {
       font-size: 3.5rem;
