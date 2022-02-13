@@ -2,15 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { StyledBrowse } from "./StyledBrowse";
 import { Navbar } from "../../global/components/Navbar";
-import { MovieCard } from "../../layout/MovieCard";
-import { MovieList } from "../../global/components/MovieList";
+
 
 const key = process.env.REACT_APP_API_KEY;
 
 const Browse = () => {
   const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
     const fetchMovies = async () => {
       await axios
         .get(
@@ -19,20 +17,22 @@ const Browse = () => {
         .then((res) => setMovies(res.data?.results.slice(0, 4)))
         .catch((err) => console.log(err));
     };
+  useEffect(() => {
+
     fetchMovies();
+
   }, []);
+
+  console.log(movies)
 
   return (
     <StyledBrowse.Container>
       <Navbar />
-      {/*<StyledBrowse.MovieList >*/}
 
-      {/*  {movies?.map((movie: any) => (*/}
-      {/*    <MovieCard movie={movie} key={movie.id} />*/}
-      {/*  ))}*/}
-      {/*</StyledBrowse.MovieList>*/}
+      <div style={{ paddingTop: "100px", width: "100vw" }}>
 
-      <div style={{ paddingTop: "100px", width: "100vw" }}></div>
+        ahoj
+      </div>
     </StyledBrowse.Container>
   );
 };

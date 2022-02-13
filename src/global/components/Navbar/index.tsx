@@ -1,12 +1,8 @@
-import React, { ChangeEvent, useRef, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { FaBell } from "react-icons/fa";
 import { StyledNavbar } from "./StyledNavbar";
-import { SEARCH_API_URL } from "../../constants/apiConstants";
-import axios from "axios";
-import { useSetRecoilState } from "recoil";
-import { SearchMovieAtom } from "../../recoil/SearchMovieAtom";
 
 const menuLinks = [
   {
@@ -34,8 +30,6 @@ export const Navbar = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const setMovies = useSetRecoilState(SearchMovieAtom);
-
   const history = useHistory();
 
   window.onscroll = () => {
@@ -45,10 +39,7 @@ export const Navbar = () => {
 
   const handleSearch = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await axios
-      .get(SEARCH_API_URL + `&query=${text.replaceAll(" ", "+")}`)
-      .then((res) => setMovies(res.data))
-      .then(() => history.push(`/search`));
+    history.push(`/search?query=${text.replaceAll(" ", "+")}`);
     setText("");
   };
 
