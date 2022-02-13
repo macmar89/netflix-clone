@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -13,7 +14,7 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
   height: 100px;
   display: flex;
   align-items: center;

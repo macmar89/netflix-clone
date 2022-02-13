@@ -27,6 +27,26 @@ const OurStory = styled.div`
   border-bottom: 8px solid ${({ theme }) => theme.colors.gray};
   width: 100%;
 
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    right: 50px;
+    z-index: 500;
+
+    img {
+      width: 166px;
+      height: 44px;
+    }
+
+    button {
+      width: 140px;
+      font-weight: normal;
+    }
+  }
+
   .overlay {
     position: absolute;
     top: 0;

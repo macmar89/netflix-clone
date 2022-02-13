@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 interface StyledButtonProps {
   variant: "primary" | "secondary" | "light";
@@ -32,10 +31,3 @@ export const StyledButton = styled.button<StyledButtonProps>`
   }
 `;
 
-export const StyledLinkButton = styled(Link)`
-  margin: auto;
-  background-color: ${({ theme }) => theme.colors.red};
-  color: ${({ theme }) => theme.colors.white};
-  padding: 7px 17px;
-  border-radius: 3px;
-`;

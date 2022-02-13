@@ -1,14 +1,10 @@
 import React, { ReactElement } from "react";
-import { StyledButton, StyledLinkButton } from "./StyledButton";
+import { StyledButton } from "./StyledButton";
 
 interface IButtonProps {
   label: string | ReactElement;
   variant?: "primary" | "secondary" | "light";
   className?: string;
-}
-
-interface ILinkButtonProps extends IButtonProps {
-  href: string;
 }
 
 export const Button = ({
@@ -21,8 +17,4 @@ export const Button = ({
       {label}
     </StyledButton>
   );
-};
-
-export const LinkButton = ({ href, label }: ILinkButtonProps) => {
-  return <StyledLinkButton to={href}>{label}</StyledLinkButton>;
 };

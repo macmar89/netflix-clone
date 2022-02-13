@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
     <StyledLogin.Wrapper>
-      <StyledLogin.Logo>
+      <StyledLogin.Logo to='/'>
         <img src={"/logo.png"} alt={"logo"} className="logo" />
       </StyledLogin.Logo>
       <StyledLogin.LoginBox>

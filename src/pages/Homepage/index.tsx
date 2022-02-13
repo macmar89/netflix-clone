@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { StyledHomepage } from "./StyledHomepage";
 import Footer from "../../layout/Footer";
 import { StoryCard } from "../../layout/StoryCard";
+import { Button } from "../../global/components/Button";
 
 const Homepage = () => {
   return (
@@ -9,6 +11,12 @@ const Homepage = () => {
       <StyledHomepage.OurStory>
         <img src="/homepage-image.jpg" alt="" />
         <div className="overlay" />
+        <div className="nav">
+          <img src="/logo.png" alt='logo'/>
+          <Link to="/login">
+            <Button label="Prihlásiť sa" />
+          </Link>
+        </div>
         <div className="content">
           <h1>Neobmedzené pozeranie na filmy, TV programy a ďalšie.</h1>
           <h2>Pozerajte kdekoľvek. Zrušte kedykoľvek</h2>
@@ -17,7 +25,7 @@ const Homepage = () => {
               Ste pripravený sa pozerať? Pre vytvorenie alebo obnovenie účtu
               zadajte e-mail.
             </h3>
-            <form className='join-us'>
+            <form className="join-us">
               <input type="text" placeholder="E-mailová adresa" />
               <button>Začať</button>
             </form>
