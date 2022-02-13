@@ -38,6 +38,7 @@ const Search = () => {
     <StyledSearch.Container>
       <Navbar />
       <StyledSearch.Content>
+        <h1>Výsledky pre hľadaný výraz : {query.replaceAll("+", " ")}</h1>
         <MovieList movies={searchedMovies} setCurrentPage={setCurrentPage} />
       </StyledSearch.Content>
     </StyledSearch.Container>

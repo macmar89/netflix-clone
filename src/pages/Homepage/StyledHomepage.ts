@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const Container = styled.div`
   position: relative;
+  background-color: #000;
 `;
 
 const Header = styled.div`
@@ -23,64 +24,18 @@ const Header = styled.div`
 
 const Section = styled.section``;
 
-const StoryCard = styled.section`
+const OurStory = styled.div`
   border-bottom: 8px solid ${({ theme }) => theme.colors.gray};
   padding: 70px 45px;
 
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-
-    .image {
-      width: 500px;
-    }
-
-    > * {
-      flex: 1;
-    }
-
-    h1 {
-      font-size: 3.125rem;
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 1.625rem;
-      margin: 0.75em 0 0.25em;
-    }
+  img {
+    width: 100%;
   }
-  //max-width: 950px;
-  //padding: 0 75px;
-  //text-align: center;
-  //background-image: url('homepage-image.jpg');
-  //background-position: center;
-  //background-repeat: no-repeat;
-  //object-fit: cover;
-  //
-  //h1 {
-  //  max-width: 800px;
-  //  font-size: 4rem;
-  //  margin: 0 75px;
-  //}
-  //
-  //h2 {
-  //  font-size: 1.625rem;
-  //  max-width: 800px;
-  //  margin: 1rem auto;
-  //}
-  //
-  //h3 {
-  //  font-size: 19.2px;
-  //}
 `;
 
 export const StyledHomepage = {
-  Wrapper: Wrapper,
-  Header: Header,
-  Section: Section,
-  StoryCard: StoryCard,
+  Container,
+  Header,
+  Section,
+  OurStory,
 };

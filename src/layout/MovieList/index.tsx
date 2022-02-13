@@ -13,7 +13,7 @@ const MovieList = ({ movies, setCurrentPage }: IMovieList) => {
     <StyledMovieList.Container>
       <StyledMovieList.Main>
         {movies?.results?.map((movie: any) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <MovieCard key={movie.id} movie={movie} showTitle/>
         ))}
       </StyledMovieList.Main>
       {movies && movies?.total_pages > 1 && (

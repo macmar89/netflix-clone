@@ -5,9 +5,10 @@ import { IMAGE_URL } from "../../global/constants/apiConstants";
 
 interface IMovieCard {
   movie: any;
+  showTitle? : boolean
 }
 
-export const MovieCard = ({ movie }: IMovieCard) => {
+export const MovieCard = ({ movie, showTitle }: IMovieCard) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const poster = `${IMAGE_URL}${movie?.backdrop_path}`;
 
@@ -19,7 +20,7 @@ export const MovieCard = ({ movie }: IMovieCard) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       {movie?.poster_path ? <img src={poster} alt="poster" /> : "nem obrazok"}
-      <StyledMovieCard.Text isHovered={isHovered}>
+      <StyledMovieCard.Text isHovered={showTitle  || isHovered}>
         {movie?.title}
       </StyledMovieCard.Text>
     </StyledMovieCard.Container>

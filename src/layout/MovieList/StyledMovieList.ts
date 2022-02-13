@@ -22,8 +22,8 @@ const Main = styled.main`
   }
 
   @media (min-width: 1440px) {
-    max-width: 1140px;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    max-width: 1360px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1.5rem;
   }
 `;
