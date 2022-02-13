@@ -7,6 +7,7 @@ import { Button } from "../../global/components/Button";
 import { RiInformationLine } from "react-icons/ri";
 import { FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import {TitleOriginal} from "../TitleOriginal";
 
 const Preview = ({ movie }: { movie: any }) => {
   const image = `${IMAGE_URL}${movie?.backdrop_path}`;
@@ -15,9 +16,10 @@ const Preview = ({ movie }: { movie: any }) => {
     <StyledPreview.Container>
       <img src={image} alt="movie" />
       <StyledPreview.Info>
-        <h3>
-          {movie?.title} <span className='original'>{movie?.original_title}</span>
-        </h3>
+        {/*<h1>*/}
+        {/*  {movie?.title} <span className='original'>{movie?.original_title}</span>*/}
+        {/*</h1>*/}
+        <TitleOriginal title={movie?.title} originalTitle={movie?.original_title} />
         <div className="other">
           {movie?.release_date && (
             <div className="year">{movie && getYear(movie?.release_date)}</div>

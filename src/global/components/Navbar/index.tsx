@@ -6,19 +6,19 @@ import { StyledNavbar } from "./StyledNavbar";
 
 const menuLinks = [
   {
-    title: "Home",
+    title: "Domovská stránka",
     url: "/browse",
   },
   {
-    title: "Movies",
+    title: "Filmy",
     url: "/browse/movies",
   },
   {
-    title: "New & favorites",
+    title: "Nové a obľúbené",
     url: "/latest",
   },
   {
-    title: "My List",
+    title: "Môj zoznam",
     url: "/my-list",
   },
 ];

@@ -19,7 +19,7 @@ const Info = styled.div`
   max-width: 50%;
   padding: 1rem;
 
-  h3 {
+  h1 {
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 1.8rem;
