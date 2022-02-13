@@ -1,25 +1,28 @@
 import React from "react";
 import { StyledHomepage } from "./StyledHomepage";
 import Footer from "../../layout/Footer";
-import { LinkButton } from "../../global/components/Button";
 import { StoryCard } from "../../layout/StoryCard";
 
 const Homepage = () => {
   return (
     <StyledHomepage.Container>
       <StyledHomepage.OurStory>
-        <h1>Neomezená podívaná na filmy, TV pořady a další.</h1>
-        <h2>Dívejte se kdekoli. Zrušte kdykoli.</h2>
-        <form>
-          <h3>
-            Jste připraveni se dívat? Pro vytvoření nebo obnovení účtu zadejte
-            e-mail.
-          </h3>
-          <div>
-            <input type="text" placeholder="E-mailová adresa" />
-            <button>Začít</button>
-          </div>
-        </form>
+        <img src="/homepage-image.jpg" alt="" />
+        <div className="overlay" />
+        <div className="content">
+          <h1>Neobmedzené pozeranie na filmy, TV programy a ďalšie.</h1>
+          <h2>Pozerajte kdekoľvek. Zrušte kedykoľvek</h2>
+          <form>
+            <h3>
+              Ste pripravený sa pozerať? Pre vytvorenie alebo obnovenie účtu
+              zadajte e-mail.
+            </h3>
+            <form className='join-us'>
+              <input type="text" placeholder="E-mailová adresa" />
+              <button>Začať</button>
+            </form>
+          </form>
+        </div>
       </StyledHomepage.OurStory>
       <StoryCard
         title="Užívajte si sledovanie na televízií"
