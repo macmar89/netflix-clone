@@ -1,4 +1,5 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
+import { BsChevronRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { StyledHomepage } from "./StyledHomepage";
 import Footer from "../../layout/Footer";
@@ -6,13 +7,17 @@ import { StoryCard } from "../../layout/StoryCard";
 import { Button } from "../../global/components/Button";
 
 const Homepage = () => {
+  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <StyledHomepage.Container>
       <StyledHomepage.OurStory>
         <img src="/homepage-image.jpg" alt="" />
         <div className="overlay" />
         <div className="nav">
-          <img src="/logo.png" alt='logo'/>
+          <img src="/logo.png" alt="logo" />
           <Link to="/login">
             <Button label="Prihlásiť sa" />
           </Link>
@@ -25,9 +30,11 @@ const Homepage = () => {
               Ste pripravený sa pozerať? Pre vytvorenie alebo obnovenie účtu
               zadajte e-mail.
             </h3>
-            <form className="join-us">
+            <form className="join-us" onSubmit={handleSubmit}>
               <input type="text" placeholder="E-mailová adresa" />
-              <button>Začať</button>
+              <button>
+                Začať <BsChevronRight />
+              </button>
             </form>
           </form>
         </div>

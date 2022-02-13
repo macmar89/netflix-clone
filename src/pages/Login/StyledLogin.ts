@@ -1,23 +1,36 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 1) 100%
-    ),
-    url("/login-background.jpg");
-  background-size: cover;
+const Container = styled.div`
   position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+`;
+
+const Content = styled.div`
+  z-index: 20;
 `;
 
 const Logo = styled(Link)`
+  position: absolute;
+  top: 0;
   height: 100px;
   display: flex;
   align-items: center;
+  z-index: 200;
 
   .logo {
     margin-left: 50px;
@@ -27,14 +40,20 @@ const Logo = styled(Link)`
 `;
 
 const LoginBox = styled.div`
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
   max-width: 350px;
   padding: 60px 68px 48px;
   margin: 0 auto 90px;
   height: auto;
   background-color: rgba(0, 0, 0, 0.75);
+  z-index: 200;
 
   h1 {
     font-size: 2em;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -73,7 +92,7 @@ const Other = styled.div`
     font-size: 13px;
 
     svg {
-      color: #3B579D;
+      color: #3b579d;
       font-size: 24px;
     }
   }
@@ -97,7 +116,8 @@ const Other = styled.div`
 `;
 
 export const StyledLogin = {
-  Wrapper,
+  Container,
+  Content,
   Logo,
   LoginBox,
   Form,

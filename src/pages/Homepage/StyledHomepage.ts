@@ -92,7 +92,7 @@ const OurStory = styled.div`
     h3 {
       font-size: 1.3rem;
       font-weight: lighter;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.2rem;
     }
   }
 
@@ -105,7 +105,8 @@ const OurStory = styled.div`
       border-radius: 0;
       outline: none;
       border: 0;
-      padding: 1rem 0 1rem 1rem;
+      padding: 1rem 0 1rem 1.5rem;
+      font-size: 1.2rem;
 
       &::placeholder {
         font-size: 1rem;
@@ -113,10 +114,20 @@ const OurStory = styled.div`
     }
 
     button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 0.5rem;
       flex: 2;
       border: 0;
       height: 100%;
       background-color: ${({ theme }) => theme.colors.red};
+      color: ${({theme}) => theme.colors.white};
+      font-size: 1.7rem;
+      cursor: pointer;
+      svg {
+        font-size: 1.4rem;
+      }
     }
   }
 `;

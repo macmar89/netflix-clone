@@ -37,68 +37,79 @@ const Login = () => {
   };
 
   return (
-    <StyledLogin.Wrapper>
-      <StyledLogin.Logo to='/'>
-        <img src={"/logo.png"} alt={"logo"} className="logo" />
-      </StyledLogin.Logo>
-      <StyledLogin.LoginBox>
-        <h1>Sign In</h1>
-        <StyledLogin.Form onSubmit={handleSubmit(onSubmit)}>
-          {/*<input type="text" placeholder={"Password"} />*/}
-          <Input
-            placeholder="Email"
-            {...register("email")}
-            errorMessage={errors?.email?.message}
-          />
-          <Input
-            placeholder={"Email or phone number"}
-            type="password"
-            errorMessage={errors?.password?.message}
-            {...register("password")}
-          />
+    <StyledLogin.Container>
+      <img src="/login.jpg" alt="background" />
+      <div className="overlay" />
+      <StyledLogin.Content>
+        <StyledLogin.Logo to="/">
+          <img src={"/logo.png"} alt={"logo"} className="logo" />
+        </StyledLogin.Logo>
+        <StyledLogin.LoginBox>
+          <h1>Sign In</h1>
+          <StyledLogin.Form onSubmit={handleSubmit(onSubmit)}>
+            {/*<input type="text" placeholder={"Password"} />*/}
+            <Input
+              placeholder="Email"
+              {...register("email")}
+              errorMessage={errors?.email?.message}
+            />
+            <Input
+              placeholder={"Email or phone number"}
+              type="password"
+              errorMessage={errors?.password?.message}
+              {...register("password")}
+            />
 
-          <div style={{ padding: "1.5rem 0 0.75rem 0" }}>
-            <Button label={"Sign In"} />
-          </div>
-          <StyledLogin.LoginFormHelp>
-            <div className="remember-login">
-              <input type="checkbox" name="remember-login" />
-              <label>Remember me</label>
+            <div style={{ padding: "1.5rem 0 0.75rem 0" }}>
+              <Button label={"Sign In"} />
             </div>
-            <div className="help">
-              <Link to="https://www.netflix.com/sk/LoginHelp">Need help?</Link>
+            <StyledLogin.LoginFormHelp>
+              <div className="remember-login">
+                <input type="checkbox" name="remember-login" />
+                <label>Remember me</label>
+              </div>
+              <div className="help">
+                <Link to="https://www.netflix.com/sk/LoginHelp">
+                  Need help?
+                </Link>
+              </div>
+            </StyledLogin.LoginFormHelp>
+          </StyledLogin.Form>
+          <StyledLogin.Other>
+            <div className="fa">
+              <AiFillFacebook />
+              <span>Login with Facebook</span>
             </div>
-          </StyledLogin.LoginFormHelp>
-        </StyledLogin.Form>
-        <StyledLogin.Other>
-          <div className="fa">
-            <AiFillFacebook />
-            <span>Login with Facebook</span>
-          </div>
-          <div>
-            New to Netflix?{" "}
-            <Link to="/" className="link">
-              Sign up now
-            </Link>
-          </div>
-          <p>
-            This page is protected by Google reCAPTCHA to ensure you're not a
-            bot.{" "}
-            <span className="blue-link" onClick={() => setShowMore(true)}>
-              Learn more.
-            </span>
-          </p>
-          <p style={{ visibility: `${showMore ? "visible" : "hidden"}`, transition: 'all 0.5s easy ' }}>
-            The information collected by Google reCAPTCHA is subject to the
-            Google <span className="blue-link">Privacy Policy</span> and{" "}
-            <span className="blue-link">Terms of Service</span> , and is used
-            for providing, maintaining, and improving the reCAPTCHA service and
-            for general security purposes (it is not used for personalized
-            advertising by Google).
-          </p>
-        </StyledLogin.Other>
-      </StyledLogin.LoginBox>
-    </StyledLogin.Wrapper>
+            <div>
+              New to Netflix?{" "}
+              <Link to="/" className="link">
+                Sign up now
+              </Link>
+            </div>
+            <p>
+              This page is protected by Google reCAPTCHA to ensure you're not a
+              bot.{" "}
+              <span className="blue-link" onClick={() => setShowMore(true)}>
+                Learn more.
+              </span>
+            </p>
+            <p
+              style={{
+                visibility: `${showMore ? "visible" : "hidden"}`,
+                transition: "all 0.5s easy ",
+              }}
+            >
+              The information collected by Google reCAPTCHA is subject to the
+              Google <span className="blue-link">Privacy Policy</span> and{" "}
+              <span className="blue-link">Terms of Service</span> , and is used
+              for providing, maintaining, and improving the reCAPTCHA service
+              and for general security purposes (it is not used for personalized
+              advertising by Google).
+            </p>
+          </StyledLogin.Other>
+        </StyledLogin.LoginBox>
+      </StyledLogin.Content>
+    </StyledLogin.Container>
   );
 };
 
