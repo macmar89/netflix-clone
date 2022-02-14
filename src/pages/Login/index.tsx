@@ -38,7 +38,7 @@ const Login = () => {
 
   return (
     <StyledLogin.Container>
-      <img src='/images/login.jpg' alt="background" />
+      <img src="/images/login.jpg" alt="background" />
       <div className="overlay" />
       <StyledLogin.Content>
         <StyledLogin.Logo to="/">
@@ -47,14 +47,13 @@ const Login = () => {
         <StyledLogin.LoginBox>
           <h1>Sign In</h1>
           <StyledLogin.Form onSubmit={handleSubmit(onSubmit)}>
-            {/*<input type="text" placeholder={"Password"} />*/}
             <Input
               placeholder="Email"
               {...register("email")}
               errorMessage={errors?.email?.message}
             />
             <Input
-              placeholder={"Email or phone number"}
+              placeholder={"Password"}
               type="password"
               errorMessage={errors?.password?.message}
               {...register("password")}

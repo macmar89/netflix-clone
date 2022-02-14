@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {devices} from "../../styles/breakpoints";
 
 const Container = styled.div`
   position: relative;
@@ -83,6 +84,10 @@ const OurStory = styled.div`
     h1 {
       font-size: 3.5rem;
       margin-bottom: 1rem;
+
+      @media ${devices.desktop} {
+        color: pink
+      }
     }
 
     h2 {
