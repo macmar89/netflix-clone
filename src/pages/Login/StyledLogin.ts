@@ -1,22 +1,35 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { devices } from "../../styles/breakpoints";
 
 const Container = styled.div`
   position: relative;
 
   img {
+    display: none;
     width: 100%;
     height: 100%;
+
+    @media ${devices.tablet} {
+      display: flex;
+      height: 100vh;
+      object-fit: cover;
+    }
   }
 
   .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 5;
+    display: none;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+
+    @media ${devices.tablet} {
+      display: flex;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 5;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
   }
 `;
 
@@ -41,12 +54,7 @@ const Logo = styled(Link)`
 
 const LoginBox = styled.div`
   position: absolute;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 350px;
-  padding: 60px 68px 48px;
-  margin: 0 auto 90px;
+  padding: 70px 25px;
   height: auto;
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 200;
@@ -54,6 +62,15 @@ const LoginBox = styled.div`
   h1 {
     font-size: 2em;
     margin-bottom: 2rem;
+  }
+
+  @media ${devices.tablet} {
+    padding: 60px 68px 48px;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 350px;
+  margin: 0 auto 90px;
   }
 `;
 
