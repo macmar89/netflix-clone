@@ -61,18 +61,31 @@ const Info = styled.div`
   font-size: 1.05rem;
 
   @media ${devices.tablet} {
-    padding: 1rem 10rem 3rem 10rem;
+    padding: 1rem 3rem 3rem 3rem;
+  }
+
+  @media ${devices.laptopL} {
     flex-flow: row;
   }
+
+
 
   .left {
     flex: 3;
     order: 2;
+
+    @media ${devices.laptopL} {
+      order: 1;
+    }
   }
 
   .right {
     flex: 2;
     order: 1;
+
+    @media ${devices.laptopL} {
+      order: 2;
+    }
   }
 
   .basic {
@@ -132,7 +145,7 @@ const Info = styled.div`
       font-size: 1rem;
 
       @media ${devices.laptop} {
-        font-size: 1.5rem
+        font-size: 1.5rem;
       }
     }
 
