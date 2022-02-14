@@ -2,7 +2,6 @@ import React, { ChangeEvent } from "react";
 import { BsChevronRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { StyledHomepage } from "./StyledHomepage";
-import Footer from "../../layout/Footer";
 import { StoryCard } from "../../global/components/StoryCard";
 import { Button } from "../../global/components/Button";
 
@@ -14,7 +13,7 @@ const Homepage = () => {
   return (
     <StyledHomepage.Container>
       <StyledHomepage.OurStory>
-        <img src="/homepage-image.jpg" alt="" />
+        <img src="/images/homepage-image.jpg" alt="" />
         <div className="overlay" />
         <div className="nav">
           <img src="/images/logo.png" alt="logo" />
@@ -43,7 +42,7 @@ const Homepage = () => {
         title="Užívajte si sledovanie na televízií"
         subtitle="Pozerajte sa na Smart TV, PlayStation, Xbox, Chromecast, Apple TV,
               Blu-ray prehrávačoch a ďalších zariadeniach."
-        image="tv.png"
+        image="/images/tv.png"
         imageSide="right"
       />
 
@@ -52,7 +51,7 @@ const Homepage = () => {
               off-line."
         subtitle="Uložte si svoje obľúbené programy, aby ste mali stále na čo
               pozerať."
-        image="mobile.jpg"
+        image="/images/mobile.jpg"
         imageSide="left"
       />
 
@@ -60,7 +59,7 @@ const Homepage = () => {
         title="Pozerajte všade."
         subtitle="Streamujte neobmedzene filmy a TV programy za výhodnú cenu na
               telefóne, tablete, notebooku a TV."
-        image="device.png"
+        image="/images/device.png"
         imageSide="right"
       />
 
@@ -69,11 +68,10 @@ const Homepage = () => {
         subtitle="S vašim členstvom sa deti môžu vydať za dobrodružstvom aj so
               svojími obľúbenými hrdinami a to v prostredí, ktoré je stvorené
               priamo pre ne."
-        image="kids.png"
+        image="/images/kids.png"
         imageSide="left"
       />
 
-      <Footer />
     </StyledHomepage.Container>
   );
 };

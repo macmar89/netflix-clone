@@ -22,7 +22,7 @@ export const MovieCard = ({ movie, showTitle }: IMovieCard) => {
         {movie?.backdrop_path && movie?.backdrop_path !== null? (
           <img src={poster} alt="poster" />
         ) : (
-          <img src="/images/movie.svg" alt="movie" />
+          <img src="/images/movie.jpg" alt="movie" />
         )}
         <StyledMovieCard.Text isHovered={showTitle || isHovered}>
           {movie?.title}
