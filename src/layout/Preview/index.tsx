@@ -16,9 +16,6 @@ const Preview = ({ movie }: { movie: any }) => {
     <StyledPreview.Container>
       <img src={image} alt="movie" />
       <StyledPreview.Info>
-        {/*<h1>*/}
-        {/*  {movie?.title} <span className='original'>{movie?.original_title}</span>*/}
-        {/*</h1>*/}
         <TitleOriginal title={movie?.title} originalTitle={movie?.original_title} />
         <div className="other">
           {movie?.release_date && (
@@ -31,7 +28,7 @@ const Preview = ({ movie }: { movie: any }) => {
             </div>
           )}
         </div>
-        <p>{truncate(movie?.overview)}</p>
+        <p className='overview'>{truncate(movie?.overview)}</p>
         <div className="buttons">
           <Button
             className="btn-play"

@@ -32,12 +32,6 @@ const Browse = () => {
     <StyledBrowse.Container>
       <Navbar />
 
-      {/*<div style={{ paddingTop: "100px", width: "100vw" }}>*/}
-      {/*  {movies?.map((movie: any) => (*/}
-      {/*    <div key={movie.id}>{movie.title}</div>*/}
-      {/*  ))}*/}
-      {/*</div>*/}
-
       <Preview movie={movies && movies[0]} />
 
       <MovieCarousel movies={movies} />

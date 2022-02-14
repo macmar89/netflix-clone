@@ -1,48 +1,44 @@
 import styled from "styled-components";
+import { devices } from "../../styles/breakpoints";
 
 const Container = styled.div`
   position: relative;
+  display: none;
 
   img {
     width: 100%;
     height: auto;
   }
+
+  @media ${devices.tablet} {
+    display: flex;
+  }
 `;
 
 const Info = styled.div`
   position: absolute;
-  left: 50px;
-  bottom: 100px;
+  left: 20px;
+  bottom: 20px;
   background-color: rgb(20, 20, 20, 0.6);
   border-radius: 5px;
   width: auto;
   max-width: 50%;
   padding: 1rem;
 
-  h1 {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 1.8rem;
-    margin: 0;
-    padding: 1rem 0;
-
-    span {
-      font-size: 1.2rem;
-
-      &:before {
-        content: "(";
-      }
-      &:after {
-        content: ")";
-      }
-    }
+  @media ${devices.laptop} {
+    left: 50px;
+    bottom: 100px;
   }
 
   .other {
-    display: flex;
+    display: none;
     column-gap: 0.5rem;
     font-weight: bolder;
     font-size: 1.2rem;
+
+    @media ${devices.laptop} {
+      display: flex;
+    }
 
     .original,
     .count {
@@ -73,6 +69,14 @@ const Info = styled.div`
     }
   }
 
+  .overview {
+    display: none;
+
+    @media ${devices.laptop} {
+      display: flex;
+    }
+  }
+
   .buttons {
     display: flex;
     align-items: center;
@@ -82,7 +86,11 @@ const Info = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      column-gap: 10px;
+      column-gap: 5px;
+
+      @media ${devices.laptop} {
+        column-gap: 10px;
+      }
 
       svg {
         font-size: 1.5rem;
@@ -90,13 +98,23 @@ const Info = styled.div`
     }
     .btn-play {
       width: 250px;
+      display: none;
+
+      @media ${devices.laptop} {
+        display: flex;
+      }
     }
 
     .link {
       user-select: none;
 
       .btn {
-        width: 350px;
+        width: 200px;
+        font-size: 1rem;
+
+        @media ${devices.laptop} {
+          width: 350px;
+        }
       }
     }
   }
