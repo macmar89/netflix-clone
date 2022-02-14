@@ -25,9 +25,9 @@ const Info = styled.div`
   max-width: 50%;
   padding: 1rem;
 
-  @media ${devices.laptop} {
+  @media ${devices.laptopL} {
     left: 50px;
-    bottom: 100px;
+    bottom: 60px;
   }
 
   .other {
@@ -38,6 +38,7 @@ const Info = styled.div`
 
     @media ${devices.laptop} {
       display: flex;
+      margin-bottom: 1rem
     }
 
     .original,
@@ -72,7 +73,7 @@ const Info = styled.div`
   .overview {
     display: none;
 
-    @media ${devices.laptop} {
+    @media ${devices.laptopL} {
       display: flex;
     }
   }
@@ -88,7 +89,7 @@ const Info = styled.div`
       justify-content: center;
       column-gap: 5px;
 
-      @media ${devices.laptop} {
+      @media ${devices.laptopL} {
         column-gap: 10px;
       }
 

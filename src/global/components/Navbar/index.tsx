@@ -9,18 +9,6 @@ const menuLinks = [
     title: "Domovská stránka",
     url: "/browse",
   },
-  {
-    title: "Filmy",
-    url: "/browse/movies",
-  },
-  {
-    title: "Nové a obľúbené",
-    url: "/latest",
-  },
-  {
-    title: "Môj zoznam",
-    url: "/my-list",
-  },
 ];
 
 export const Navbar = () => {
@@ -47,9 +35,9 @@ export const Navbar = () => {
     <StyledNavbar.Container isScrolled={isScrolled}>
       <StyledNavbar.Content>
         <StyledNavbar.Left>
-          <div>
+          <Link to={"/browse"}>
             <img src="/logo.png" alt="logo" className="logo" />
-          </div>
+          </Link>
           <StyledNavbar.NavLinks>
             {menuLinks.map((link: any, index: number) => (
               <StyledNavbar.NavLink key={index}>
@@ -66,8 +54,7 @@ export const Navbar = () => {
             />
             <input
               type="text"
-              placeholder={"Search movie"}
-              autoFocus
+              placeholder={"Hľadaj"}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setText(e.target.value)
               }

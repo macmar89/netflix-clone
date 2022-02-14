@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import { devices } from "../../styles/breakpoints";
 
 const Container = styled.div`
   background-color: #181818;
-  min-height: 100vh;
 `;
 
 const Content = styled.div`
@@ -13,14 +13,18 @@ const Content = styled.div`
       user-select: none;
     }
     .movie-title {
-      position: absolute;
-      bottom: 50px;
-      left: 3rem;
+      position: relative;
       padding: 1.5rem 2rem;
       background-color: rgb(20, 20, 20, 0.6);
       border-radius: 5px;
       text-transform: uppercase;
       font-weight: bolder;
+
+      @media ${devices.tablet} {
+        position: absolute;
+        bottom: 50px;
+        left: 3rem;
+      }
 
       .buttons {
         display: flex;
@@ -28,8 +32,16 @@ const Content = styled.div`
         column-gap: 0.8rem;
         margin-top: 1rem;
 
-        button {
-          width: 150px;
+        .btn-play {
+          .btn-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 0.5rem;
+          }
+          @media ${devices.tablet} {
+            width: 150px;
+          }
         }
 
         .icon {
@@ -43,16 +55,24 @@ const Content = styled.div`
 
 const Info = styled.div`
   display: flex;
+  flex-flow: column;
   column-gap: 4rem;
-  padding: 1rem 10rem 3rem 10rem;
+  padding: 0 2rem 3rem 2rem;
   font-size: 1.05rem;
+
+  @media ${devices.tablet} {
+    padding: 1rem 10rem 3rem 10rem;
+    flex-flow: row;
+  }
 
   .left {
     flex: 3;
+    order: 2;
   }
 
   .right {
     flex: 2;
+    order: 1;
   }
 
   .basic {
@@ -109,8 +129,11 @@ const Info = styled.div`
 
     .label {
       margin-right: 0.5rem;
-      font-size: 1.5rem;
+      font-size: 1rem;
 
+      @media ${devices.laptop} {
+        font-size: 1.5rem
+      }
     }
 
     .genre {

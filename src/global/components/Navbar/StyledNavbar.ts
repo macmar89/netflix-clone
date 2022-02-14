@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../../../styles/breakpoints";
 
 interface StyledNavbarProps {
   isScrolled: boolean;
@@ -13,26 +14,46 @@ const Container = styled.div<StyledNavbarProps>`
   display: flex;
   background-color: ${({ isScrolled }) =>
     isScrolled ? "transparent" : "#141414"};
-  height: 68px;
+  height: 60px;
   width: 100%;
   z-index: 9999;
 
   transition: background-color 0.5s ease-in-out;
 
+  @media ${devices.tablet} {
+    height: 68px;
+  }
+
   .logo {
-    width: 92px;
-    height: 31px;
+    width: 84px;
+    height: 24px;
+
+    @media ${devices.tablet} {
+      width: 92px;
+      height: 31px;
+    }
   }
 `;
 
 const Content = styled.div`
   display: flex;
   flex-flow: row;
-  width: calc(100% - 120px);
+  width: 95%;
   margin: 0 auto;
 
   justify-content: space-between;
   align-items: center;
+
+  @media ${devices.mobileL} {
+    width: calc(100% - 60px);
+  }
+
+  @media ${devices.tablet} {
+  }
+
+  @media ${devices.laptop} {
+    width: calc(100% - 120px);
+  }
 `;
 
 const Left = styled.div`
@@ -41,9 +62,16 @@ const Left = styled.div`
 `;
 
 const NavLinks = styled.ul`
-  display: flex;
+  display: none;
   column-gap: 1rem;
   list-style: none;
+
+  @media ${devices.tablet} {
+    display: flex;
+    &:first-child > * {
+      display: none;
+    }
+  }
 `;
 
 const NavLink = styled.li`
@@ -61,6 +89,11 @@ const Right = styled.div`
   .icon {
     cursor: pointer;
     font-size: 1.3rem;
+    display: none;
+
+    @media ${devices.tablet} {
+      display: flex;
+    }
   }
 `;
 
@@ -80,7 +113,11 @@ const Search = styled.form<SearchProps>`
     background-color: black;
     outline: none;
     color: white;
-    padding: 8px 8px 8px 32px;
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+
+    @media ${devices.tablet} {
+      padding: 0.5rem 0.5rem 0.5rem 2rem;
+    }
 
     &::placeholder {
       font-size: 1.05rem;
