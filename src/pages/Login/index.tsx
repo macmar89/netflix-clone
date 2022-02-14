@@ -30,8 +30,6 @@ const Login = () => {
   } = useForm({ resolver: yupResolver(validationSchema) });
 
   const onSubmit = async (data: any) => {
-    console.log(data);
-    alert("fuuj");
     reset();
     return false;
   };
@@ -60,7 +58,9 @@ const Login = () => {
             />
 
             <div style={{ padding: "1.5rem 0 0.75rem 0" }}>
-              <Button label={"Sign In"} />
+              <Link to="/browse">
+                <Button label={"Sign In"} />
+              </Link>
             </div>
             <StyledLogin.LoginFormHelp>
               <div className="remember-login">

@@ -7,6 +7,7 @@ const Container = styled.div`
 
   img {
     width: 100%;
+    min-width: 100%;
     height: auto;
   }
 

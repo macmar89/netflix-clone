@@ -9,6 +9,7 @@ import { StyledMovieCarousel } from "./StyledMovieCarousel";
 
 export const MovieCarousel = ({ movies }: { movies: any }) => {
   const options = {
+    autoplay: true,
     slidesPerView: 2,
     modules: [Navigation],
     loop: true,

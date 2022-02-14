@@ -47,6 +47,7 @@ const OurStory = styled.div`
         width: 140px;
         padding: 7px 17px;
         font-weight: normal;
+        font-size: 1rem;
       }
     }
   }

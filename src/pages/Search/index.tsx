@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyledSearch } from "./StyledSearch";
 import { Navbar } from "../../global/components/Navbar";
-import { Pagination } from "../../global/components/Pagination";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import axios from "axios";
 import { SEARCH_API_URL } from "../../global/constants/apiConstants";
 import MovieList from "../../layout/MovieList";
@@ -15,8 +14,10 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const query = search.slice(search.indexOf("=") + 1, search.length);
+  const history = useHistory();
 
   useEffect(() => {
+    if (!query) history.push("/browse");
     const fetchSearchedMovies = async () => {
       setIsLoading(true);
       await axios
@@ -31,6 +32,7 @@ const Search = () => {
     };
     fetchSearchedMovies();
   }, [query, currentPage, setSearchedMovies]);
+
 
   if (isLoading) return <Loader />;
 
