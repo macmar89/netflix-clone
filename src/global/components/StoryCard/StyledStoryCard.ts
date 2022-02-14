@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { devices } from "../../styles/breakpoints";
+import { devices } from "../../../styles/breakpoints";
 
 export const StyledStoryCard = styled.div<{ imageSide: "left" | "right" }>`
   border-bottom: 8px solid ${({ theme }) => theme.colors.gray};

@@ -1,16 +1,17 @@
-import { StyledMovieDetail } from "./StyledMovieDetail";
-import { Navbar } from "../../global/components/Navbar";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
-import { IMAGE_URL } from "../../global/constants/apiConstants";
-import Loader from "../../global/components/Loader";
-import { Button } from "../../global/components/Button";
-import { FaPlay } from "react-icons/fa";
-import { BsHandThumbsDown, BsHandThumbsUp } from "react-icons/bs";
+import React, { useEffect, useState } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import { TitleOriginal } from "../../layout/TitleOriginal";
-import { convertMinutesToTime, getYear } from "../../global/helpers/moment";
+import { BsHandThumbsDown, BsHandThumbsUp } from "react-icons/bs";
+import { FaPlay } from "react-icons/fa";
+import { useParams } from "react-router-dom";
+import { StyledMovieDetail } from "./StyledMovieDetail";
+import { IMAGE_URL } from "../../global/constants/apiConstants";
+import {Loader} from "../../global/components/Loader";
+import { Button } from "../../global/components/Button";
+import { Navbar } from "../../global/components/Navbar";
+import { TitleOriginal } from "../../global/components/TitleOriginal";
+import { convertMinutesToTime, getYear } from "../../global/helpers/formatDate";
+import {Genre} from "../../global/types/Movie";
 
 const key = process.env.REACT_APP_API_KEY;
 
@@ -20,6 +21,8 @@ const MovieDetail = () => {
   const { id }: { id: string } = useParams();
 
   const image = `${IMAGE_URL}${movie?.backdrop_path}`;
+
+  console.log(movie)
 
   useEffect(() => {
     const fetchMovieDetail = async () => {
@@ -89,7 +92,7 @@ const MovieDetail = () => {
             <div className="genres">
               <div className="label">Žáner: </div>
               {movie?.genres?.map(
-                (genre: { id: number; name: string }, index: number) => (
+                (genre: Genre, index: number) => (
                   <div className="genre" key={genre.id}>
                     {genre.name}
                     {movie?.genres?.length !== index + 1 && ","}

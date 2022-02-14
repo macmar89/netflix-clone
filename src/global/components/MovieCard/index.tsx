@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { StyledMovieCard } from "./StyledMovieCard";
-import { IMAGE_URL } from "../../global/constants/apiConstants";
+import { IMAGE_URL } from "../../constants/apiConstants";
+import {Movie} from "../../types/Movie";
 
 interface IMovieCard {
-  movie: any;
+  movie: Movie;
   showTitle?: boolean;
 }
 

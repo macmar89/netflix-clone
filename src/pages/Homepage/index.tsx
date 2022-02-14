@@ -3,7 +3,7 @@ import { BsChevronRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { StyledHomepage } from "./StyledHomepage";
 import Footer from "../../layout/Footer";
-import { StoryCard } from "../../layout/StoryCard";
+import { StoryCard } from "../../global/components/StoryCard";
 import { Button } from "../../global/components/Button";
 
 const Homepage = () => {

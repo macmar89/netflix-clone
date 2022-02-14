@@ -8,11 +8,12 @@ import { Navbar } from "../../global/components/Navbar";
 
 import { RANDOM_MOVIES_API_URL } from "../../global/constants/apiConstants";
 import Preview from "../../layout/Preview";
-import Loader from "../../global/components/Loader";
+import { Loader } from "../../global/components/Loader";
+import {Movie} from "../../global/types/Movie";
 
 const Browse = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [movies, setMovies] = useState<null | any>(null);
+  const [movies, setMovies] = useState<Movie[] | any>(null);
 
   const getRandomYear = () => {
     const date = new Date();

@@ -1,21 +1,19 @@
 import React, { useState } from "react";
-import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { AiFillFacebook } from "react-icons/ai";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
 
 import { StyledLogin } from "./StyledLogin";
 import { Button } from "../../global/components/Button";
-import { Input } from "../../global/components/Input";
-import { useForm } from "react-hook-form";
-import { AiFillFacebook } from "react-icons/ai";
 
 const Login = () => {
   const [showMore, setShowMore] = useState(false);
+  const history = useHistory();
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string()
-      .required("Please enter a valid email or phone number")
-      .email("Email is not valid"),
+    username: Yup.string().required("Please enter username"),
     password: Yup.string()
       .required("Your password must contain between 4 and 60 characters.")
       .min(4, "Min 4 characters")
@@ -30,7 +28,11 @@ const Login = () => {
   } = useForm({ resolver: yupResolver(validationSchema) });
 
   const onSubmit = async (data: any) => {
-    reset();
+    if (data?.username?.length > 0 && data?.password?.length > 0) {
+      history.push(`/browse`);
+    } else {
+      return;
+    }
     return false;
   };
 
@@ -45,22 +47,28 @@ const Login = () => {
         <StyledLogin.LoginBox>
           <h1>Sign In</h1>
           <StyledLogin.Form onSubmit={handleSubmit(onSubmit)}>
-            <Input
-              placeholder="Email"
-              {...register("email")}
-              errorMessage={errors?.email?.message}
-            />
-            <Input
-              placeholder={"Password"}
-              type="password"
-              errorMessage={errors?.password?.message}
-              {...register("password")}
-            />
+            <StyledLogin.Input error={errors?.username?.message !== undefined}>
+              <input
+                type="text"
+                placeholder="Užívateľské meno"
+                {...register("username")}
+              />
+              <div className="errorMessage">{errors?.username?.message}</div>
+            </StyledLogin.Input>
+
+            <StyledLogin.Input error={errors?.password?.message !== undefined}>
+              <input
+                type="password"
+                placeholder="Heslo"
+                {...register("password")}
+              />
+              <div className="errorMessage">{errors?.password?.message}</div>
+            </StyledLogin.Input>
 
             <div style={{ padding: "1.5rem 0 0.75rem 0" }}>
-              <Link to="/browse">
-                <Button label={"Sign In"} />
-              </Link>
+              {/*<Link to="/browse">*/}
+              <Button label={"Sign In"} />
+              {/*</Link>*/}
             </div>
             <StyledLogin.LoginFormHelp>
               <div className="remember-login">

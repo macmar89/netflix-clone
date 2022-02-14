@@ -2,12 +2,13 @@ import React from "react";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { MovieCard } from "../../../layout/NewMovieCard";
+import { MovieCard } from "../MovieCard";
 
 import "swiper/css/pagination";
 import { StyledMovieCarousel } from "./StyledMovieCarousel";
+import {Movie} from "../../types/Movie";
 
-export const MovieCarousel = ({ movies }: { movies: any }) => {
+export const MovieCarousel = ({ movies }: { movies: Movie[] }) => {
   const options = {
     autoplay: true,
     slidesPerView: 2,
@@ -28,7 +29,7 @@ export const MovieCarousel = ({ movies }: { movies: any }) => {
   return (
     <StyledMovieCarousel.Container>
       <Swiper {...options}>
-        {movies?.map((movie: any) => (
+        {movies?.map((movie: Movie) => (
           <SwiperSlide key={movie.id}>
             <MovieCard movie={movie} />
           </SwiperSlide>

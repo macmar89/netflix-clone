@@ -2,14 +2,15 @@ import React from "react";
 import { StyledPreview } from "./StyledPreview";
 import { IMAGE_URL } from "../../global/constants/apiConstants";
 import { truncate } from "../../global/helpers/formatText";
-import { getYear } from "../../global/helpers/moment";
+import { getYear } from "../../global/helpers/formatDate";
 import { Button } from "../../global/components/Button";
 import { RiInformationLine } from "react-icons/ri";
 import { FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import {TitleOriginal} from "../TitleOriginal";
+import {TitleOriginal} from "../../global/components/TitleOriginal";
+import {Movie} from "../../global/types/Movie";
 
-const Preview = ({ movie }: { movie: any }) => {
+const Preview = ({ movie }: { movie: Movie }) => {
   const image = `${IMAGE_URL}${movie?.backdrop_path}`;
 
   return (

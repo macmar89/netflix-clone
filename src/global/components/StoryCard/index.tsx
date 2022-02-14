@@ -17,9 +17,7 @@ export const StoryCard = ({
   return (
     <StyledStoryCard imageSide={imageSide}>
       <div className="container">
-          <img src={image} alt="image" className='image' />
-        {/*<div className="image">*/}
-        {/*</div>*/}
+        <img src={image} alt="poster" className="image" />
         <div className="text">
           <h1>{title}</h1>
           <h2>{subtitle}</h2>

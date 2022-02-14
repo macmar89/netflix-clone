@@ -4,6 +4,11 @@ import { BiSearch } from "react-icons/bi";
 import { FaBell } from "react-icons/fa";
 import { StyledNavbar } from "./StyledNavbar";
 
+interface ILink {
+  title: string
+  url: string
+}
+
 const menuLinks = [
   {
     title: "Domovská stránka",
@@ -39,7 +44,7 @@ export const Navbar = () => {
             <img src="/images/logo.png" alt="logo" className="logo" />
           </Link>
           <StyledNavbar.NavLinks>
-            {menuLinks.map((link: any, index: number) => (
+            {menuLinks.map((link: ILink, index: number) => (
               <StyledNavbar.NavLink key={index}>
                 <Link to={link.url}>{link.title}</Link>
               </StyledNavbar.NavLink>
