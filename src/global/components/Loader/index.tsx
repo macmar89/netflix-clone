@@ -1,10 +1,12 @@
 import React from 'react';
+import {StyledLoader} from './StyledLoader'
 
 const Loader = () => {
   return (
-    <div style={{paddingTop: "100px", fontSize: '5rem'}}>
+    <StyledLoader style={{paddingTop: "100px", fontSize: '5rem'}}>
+      <img src='/images/logo.png' alt=""/>
       Loading...
-    </div>
+    </StyledLoader>
   );
 };
 

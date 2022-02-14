@@ -36,7 +36,7 @@ export const Navbar = () => {
       <StyledNavbar.Content>
         <StyledNavbar.Left>
           <Link to={"/browse"}>
-            <img src="/logo.png" alt="logo" className="logo" />
+            <img src="/images/logo.png" alt="logo" className="logo" />
           </Link>
           <StyledNavbar.NavLinks>
             {menuLinks.map((link: any, index: number) => (

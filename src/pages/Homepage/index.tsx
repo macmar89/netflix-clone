@@ -17,7 +17,7 @@ const Homepage = () => {
         <img src="/homepage-image.jpg" alt="" />
         <div className="overlay" />
         <div className="nav">
-          <img src="/logo.png" alt="logo" />
+          <img src="/images/logo.png" alt="logo" />
           <Link to="/login">
             <Button label="Prihlásiť sa" />
           </Link>

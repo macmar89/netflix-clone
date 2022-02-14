@@ -42,7 +42,7 @@ const Login = () => {
       <div className="overlay" />
       <StyledLogin.Content>
         <StyledLogin.Logo to="/">
-          <img src={"/logo.png"} alt={"logo"} className="logo" />
+          <img src={"/images/logo.png"} alt={"logo"} className="logo" />
         </StyledLogin.Logo>
         <StyledLogin.LoginBox>
           <h1>Sign In</h1>
