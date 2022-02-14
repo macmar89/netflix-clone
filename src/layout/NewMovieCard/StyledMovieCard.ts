@@ -27,11 +27,7 @@ const Container = styled.div`
     -webkit-box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.07);
     box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.07);
     z-index: 200;
-
-
 `;
-
-const Content = styled.div``;
 
 const Text = styled.div<{ isHovered: boolean }>`
   position: absolute;
@@ -50,11 +46,9 @@ const Text = styled.div<{ isHovered: boolean }>`
     isHovered ? "translateY(0)" : "translateY(100%)"};
 
   transition: transform 0.2s ease-in-out;
-
 `;
 
 export const StyledMovieCard = {
   Container,
-  Content,
   Text,
 };
