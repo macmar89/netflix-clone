@@ -1,26 +1,9 @@
 import styled from "styled-components";
-import {devices} from "../../styles/breakpoints";
+import { devices } from "../../styles/breakpoints";
 
 const Container = styled.div`
   position: relative;
   background-color: #000;
-`;
-
-const Header = styled.div`
-  display: flex;
-  width: 95%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px;
-
-  select {
-    padding: 0.5rem;
-  }
-
-  .logo {
-    width: 167px;
-    height: 45px;
-  }
 `;
 
 const OurStory = styled.div`
@@ -31,20 +14,40 @@ const OurStory = styled.div`
   .nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: absolute;
-    top: 30px;
-    left: 50px;
-    right: 50px;
+    top: 15px;
+    left: 30px;
+    right: 30px;
     z-index: 500;
 
+    @media ${devices.laptop} {
+      top: 30px;
+      left: 50px;
+      right: 50px;
+    }
+
     img {
-      width: 166px;
-      height: 44px;
+      width: 92px;
+      height: 25px;
+      //object-fit: cover;
+
+      @media ${devices.laptop} {
+        width: 167px;
+        height: 45px;
+      }
     }
 
     button {
-      width: 140px;
-      font-weight: normal;
+      width: 100px;
+      font-size: 0.8rem;
+      padding: 0;
+
+      @media ${devices.laptop} {
+        width: 140px;
+        padding: 7px 17px;
+        font-weight: normal;
+      }
     }
   }
 
@@ -67,55 +70,119 @@ const OurStory = styled.div`
 
   img {
     width: 100%;
+    height: 500px;
+    object-fit: cover;
+
+    @media ${devices.laptop} {
+      height: auto;
+    }
   }
 
   .content {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     flex-flow: column;
     justify-content: center;
     z-index: 500;
     text-align: center;
-    max-width: 900px;
+    max-width: 90%;
+    margin: 0 auto;
+
+    @media ${devices.tablet} {
+      max-width: 600px;
+    }
+
+    @media ${devices.laptop} {
+      max-width: 900px;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+    }
 
     h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+
+      @media ${devices.laptop} {
+        font-size: 2.3rem;
+        margin-bottom: 1rem;
+      }
+
+      @media ${devices.laptopL} {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
 
       @media ${devices.desktop} {
-        color: pink
       }
     }
 
     h2 {
-      font-size: 2rem;
+      font-size: 1.3rem;
       font-weight: normal;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+
+      @media ${devices.laptop} {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+      }
+
+      @media ${devices.laptopL} {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
     }
     h3 {
-      font-size: 1.3rem;
+      font-size: 1rem;
       font-weight: lighter;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.3rem;
+
+      @media ${devices.laptop} {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      @media ${devices.laptopL} {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+      }
     }
   }
 
   .join-us {
     display: flex;
+    flex-flow: column;
     height: 70px;
+    padding-top: 1rem;
+    align-items: center;
+
+    @media ${devices.laptop} {
+      align-items: normal;
+      padding: 0;
+      flex-flow: row;
+    }
 
     input {
       flex: 5;
-      border-radius: 0;
       outline: none;
       border: 0;
       padding: 1rem 0 1rem 1.5rem;
       font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      border-radius: 3px;
+      width: 100%;
 
       &::placeholder {
         font-size: 1rem;
+      }
+
+      @media ${devices.laptop} {
+        margin: 0;
+        border-radius: 0;
       }
     }
 
@@ -128,11 +195,22 @@ const OurStory = styled.div`
       border: 0;
       height: 100%;
       background-color: ${({ theme }) => theme.colors.red};
-      color: ${({theme}) => theme.colors.white};
-      font-size: 1.7rem;
+      color: ${({ theme }) => theme.colors.white};
+      font-size: 1.3rem;
       cursor: pointer;
+      border-radius: 3px;
+      width: 200px;
+      padding: 0.7rem 0;
+
       svg {
         font-size: 1.4rem;
+      }
+
+      @media ${devices.laptop} {
+        padding: 0;
+        font-size: 1.7rem;
+        width: auto;
+        border-radius: 0;
       }
     }
   }
@@ -140,6 +218,5 @@ const OurStory = styled.div`
 
 export const StyledHomepage = {
   Container,
-  Header,
   OurStory,
 };

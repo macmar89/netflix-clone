@@ -3,7 +3,11 @@ import { devices } from "../../styles/breakpoints";
 
 export const StyledStoryCard = styled.div<{ imageSide: "left" | "right" }>`
   border-bottom: 8px solid ${({ theme }) => theme.colors.gray};
-  padding: 70px 45px;
+  padding: 50px 20px;
+
+  @media ${devices.tablet} {
+    padding: 70px 45px;
+  }
 
   .container {
     display: flex;
@@ -48,9 +52,9 @@ export const StyledStoryCard = styled.div<{ imageSide: "left" | "right" }>`
         margin-bottom: 0.5rem;
 
         @media ${devices.tablet} {
-          font-size: 2.2rem;
-
+          font-size: 2rem;
         }
+
 
         @media ${devices.laptop} {
           font-size: 3.125rem;
@@ -63,7 +67,7 @@ export const StyledStoryCard = styled.div<{ imageSide: "left" | "right" }>`
         margin: 0.75em 0 0.25em;
 
         @media ${devices.tablet} {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
         }
 
         @media ${devices.laptop} {
