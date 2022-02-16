@@ -13,11 +13,11 @@ const Login = () => {
   const history = useHistory();
 
   const validationSchema = Yup.object().shape({
-    username: Yup.string().required("Please enter username"),
+    username: Yup.string().required("Zadaj prihlasovacie meno"),
     password: Yup.string()
-      .required("Your password must contain between 4 and 60 characters.")
-      .min(4, "Min 4 characters")
-      .max(60, "Max 60 characters"),
+      .required("Heslo musí obsahovať minimálne 4 a maximálne 30 znakov")
+      .min(4, "Minimálne 4 znaky")
+      .max(30, "Maximálne 30 znakov"),
   });
 
   const {
@@ -45,7 +45,7 @@ const Login = () => {
           <img src={"/images/logo.png"} alt={"logo"} className="logo" />
         </StyledLogin.Logo>
         <StyledLogin.LoginBox>
-          <h1>Sign In</h1>
+          <h1>Prihlásiť sa</h1>
           <StyledLogin.Form onSubmit={handleSubmit(onSubmit)}>
             <StyledLogin.Input error={errors?.username?.message !== undefined}>
               <input
@@ -66,18 +66,16 @@ const Login = () => {
             </StyledLogin.Input>
 
             <div style={{ padding: "1.5rem 0 0.75rem 0" }}>
-              {/*<Link to="/browse">*/}
-              <Button label={"Sign In"} />
-              {/*</Link>*/}
+              <Button label={"Prihlásiť sa"} />
             </div>
             <StyledLogin.LoginFormHelp>
               <div className="remember-login">
                 <input type="checkbox" name="remember-login" />
-                <label>Remember me</label>
+                <label>Zapamätaj si ma</label>
               </div>
               <div className="help">
                 <Link to="https://www.netflix.com/sk/LoginHelp">
-                  Need help?
+                  Potrebujete pomoc?
                 </Link>
               </div>
             </StyledLogin.LoginFormHelp>
@@ -85,19 +83,19 @@ const Login = () => {
           <StyledLogin.Other>
             <div className="fa">
               <AiFillFacebook />
-              <span>Login with Facebook</span>
+              <span>Prihlásenie pomocou Facebooku</span>
             </div>
             <div>
-              New to Netflix?{" "}
+              Začínate s Netflixom?{" "}
               <Link to="/" className="link">
-                Sign up now
+                Registrujte sa teraz
               </Link>
             </div>
             <p>
-              This page is protected by Google reCAPTCHA to ensure you're not a
-              bot.{" "}
+              Aby sme sa uistili, že nie ste robot, je táto stránka chránená
+              pomocou funkcie Google reCAPTCHA.{" "}
               <span className="blue-link" onClick={() => setShowMore(true)}>
-                Learn more.
+                Zistiť viac
               </span>
             </p>
             <p
@@ -106,12 +104,12 @@ const Login = () => {
                 transition: "all 0.5s easy ",
               }}
             >
-              The information collected by Google reCAPTCHA is subject to the
-              Google <span className="blue-link">Privacy Policy</span> and{" "}
-              <span className="blue-link">Terms of Service</span> , and is used
-              for providing, maintaining, and improving the reCAPTCHA service
-              and for general security purposes (it is not used for personalized
-              advertising by Google).
+              Informácie ziskané pomocou Google reCAPTCHA podliehajú{" "}
+              <span className="blue-link">Ochrane súkromia</span> a{" "}
+              <span className="blue-link">Podmienkam poskytovania služieb</span>{" "}
+              spoločnosti Google a používajú sa k poskytovaniu, údržbe,
+              zlepšovaniu služby reCAPTCHA a l všeobecným bezpečnostným účelom
+              (a nie sú využívané k cieleniu reklamy zo strany Googlu).
             </p>
           </StyledLogin.Other>
         </StyledLogin.LoginBox>
